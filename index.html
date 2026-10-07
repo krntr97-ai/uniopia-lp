@@ -1,599 +1,212 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>uniopia | 正解を探すのをやめる、コーチング</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>uniopia 体験セッション｜オンラインコーチング</title>
+<meta name="description" content="「ちゃんとしてるのに、なぜか満たされない」あなたへ。頭の中の「ダメのルール」をゆるめて、本当の望みに気づくオンラインのコーチング体験セッション（無料）。">
+<meta property="og:title" content="uniopia 体験セッション">
+<meta property="og:description" content="「ちゃんとしてるのに、なぜか満たされない」あなたへ。頭の中の「ダメのルール」をゆるめて、本当の望みに気づくオンラインのコーチング体験セッション（無料）。">
+<meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500;700&family=Zen+Kaku+Gothic+New:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700&amp;family=Noto+Sans+JP:wght@400;500;700&amp;display=swap" rel="stylesheet">
 <style>
-  :root{
-    --bg: #faf7f2;
-    --bg-soft: #f2ede4;
-    --ink: #3a362f;
-    --ink-soft: #6b665c;
-    --line: #ddd5c7;
-    --accent: #a8a08a;
-    --accent-deep: #8a8268;
-    --white: #fffdfa;
-  }
-  *{box-sizing:border-box; margin:0; padding:0;}
-  html{scroll-behavior:smooth;}
-  body{
-    background: var(--bg);
-    color: var(--ink);
-    font-family: "Zen Kaku Gothic New", "Hiragino Kaku Gothic ProN", sans-serif;
-    font-weight: 300;
-    line-height: 2;
-    letter-spacing: 0.03em;
-    -webkit-font-smoothing: antialiased;
-    overflow-x: hidden;
-  }
-  .serif{ font-family: "Zen Old Mincho", serif; }
-  img, svg { display:block; }
-  a { color: inherit; text-decoration:none; }
-
-  .wrap{
-    max-width: 880px;
-    margin: 0 auto;
-    padding: 0 28px;
-  }
-
-  /* ---------- Header ---------- */
-  header{
-    position: sticky;
-    top: 0;
-    z-index: 50;
-    background: rgba(250,247,242,0.85);
-    backdrop-filter: blur(6px);
-    border-bottom: 1px solid var(--line);
-  }
-  header .wrap{
-    display:flex;
-    align-items:center;
-    justify-content: space-between;
-    padding-top: 18px;
-    padding-bottom: 18px;
-  }
-  .logo{
-    font-family: "Zen Old Mincho", serif;
-    font-size: 20px;
-    letter-spacing: 0.12em;
-    font-weight: 500;
-  }
-  .header-cta{
-    font-size: 12px;
-    letter-spacing: 0.08em;
-    padding: 9px 20px;
-    border: 1px solid var(--ink);
-    border-radius: 999px;
-    white-space: nowrap;
-  }
-
-  /* ---------- Hero ---------- */
-  .hero{
-    padding: 120px 0 100px;
-    text-align: center;
-    position: relative;
-  }
-  .hero::before{
-    content:"";
-    position:absolute;
-    top: -60px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 520px;
-    height: 520px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(168,160,138,0.14) 0%, rgba(168,160,138,0) 70%);
-    z-index: -1;
-  }
-  .hero-eyebrow{
-    font-size: 13px;
-    letter-spacing: 0.35em;
-    color: var(--ink-soft);
-    margin-bottom: 28px;
-  }
-  .hero h1{
-    font-family: "Zen Old Mincho", serif;
-    font-weight: 500;
-    font-size: clamp(30px, 5.4vw, 52px);
-    line-height: 1.65;
-    letter-spacing: 0.04em;
-  }
-  .hero h1 .light{
-    display:block;
-    font-size: 0.5em;
-    color: var(--ink-soft);
-    letter-spacing: 0.2em;
-    margin-top: 22px;
-    font-family: "Zen Kaku Gothic New", sans-serif;
-    font-weight: 400;
-  }
-  .hero p.lead{
-    max-width: 560px;
-    margin: 40px auto 0;
-    font-size: 15.5px;
-    color: var(--ink-soft);
-  }
-  .hero .cta{
-    margin-top: 56px;
-  }
-
-  /* ---------- Buttons ---------- */
-  .btn{
-    display:inline-block;
-    padding: 16px 44px;
-    background: var(--ink);
-    color: var(--white);
-    border-radius: 999px;
-    font-size: 14px;
-    letter-spacing: 0.12em;
-    transition: opacity .3s ease, transform .3s ease;
-  }
-  .btn:hover{ opacity:0.82; transform: translateY(-2px); }
-  .btn.outline{
-    background: transparent;
-    color: var(--ink);
-    border: 1px solid var(--ink);
-  }
-  .btn-note{
-    display:block;
-    margin-top: 14px;
-    font-size: 11.5px;
-    color: var(--ink-soft);
-    letter-spacing: 0.05em;
-  }
-
-  /* ---------- Section generic ---------- */
-  section{
-    padding: 110px 0;
-  }
-  .section-alt{
-    background: var(--bg-soft);
-  }
-  .eyebrow{
-    display:block;
-    text-align:center;
-    font-size: 12px;
-    letter-spacing: 0.3em;
-    color: var(--accent-deep);
-    margin-bottom: 22px;
-  }
-  h2{
-    font-family: "Zen Old Mincho", serif;
-    font-weight: 500;
-    font-size: clamp(24px, 3.6vw, 34px);
-    text-align:center;
-    line-height: 1.7;
-    letter-spacing: 0.03em;
-    margin-bottom: 20px;
-  }
-  .section-lead{
-    text-align:center;
-    max-width: 580px;
-    margin: 0 auto 64px;
-    color: var(--ink-soft);
-    font-size: 14.5px;
-  }
-  .divider{
-    width: 1px;
-    height: 60px;
-    background: var(--line);
-    margin: 0 auto;
-  }
-
-  /* ---------- Empathy list ---------- */
-  .empathy-list{
-    max-width: 620px;
-    margin: 0 auto;
-    display:flex;
-    flex-direction:column;
-    gap: 26px;
-  }
-  .empathy-item{
-    display:flex;
-    align-items:flex-start;
-    gap: 18px;
-    padding-bottom: 26px;
-    border-bottom: 1px solid var(--line);
-    font-size: 15px;
-  }
-  .empathy-item:last-child{ border-bottom:none; }
-  .empathy-mark{
-    font-family:"Zen Old Mincho", serif;
-    color: var(--accent-deep);
-    font-size: 15px;
-    padding-top: 2px;
-  }
-
-  /* ---------- Purpose / quote block ---------- */
-  .quote-block{
-    max-width: 640px;
-    margin: 0 auto;
-    text-align:center;
-  }
-  .quote-block .serif-line{
-    font-family:"Zen Old Mincho", serif;
-    font-size: clamp(18px, 2.6vw, 22px);
-    line-height: 2.1;
-    letter-spacing: 0.04em;
-  }
-  .quote-block .serif-line .fade{
-    color: var(--ink-soft);
-    font-size: 0.72em;
-  }
-
-  /* ---------- Vision card ---------- */
-  .vision-card{
-    max-width: 640px;
-    margin: 0 auto;
-    padding: 56px 44px;
-    background: var(--white);
-    border-radius: 4px;
-    text-align:center;
-    box-shadow: 0 20px 50px -30px rgba(58,54,47,0.25);
-  }
-  .vision-card .serif{
-    font-size: clamp(19px, 2.8vw, 24px);
-    line-height: 2;
-  }
-
-  /* ---------- Concept ---------- */
-  .concept-list{
-    max-width: 700px;
-    margin: 0 auto;
-    display:flex;
-    flex-direction:column;
-    gap: 46px;
-  }
-  .concept-item{
-    display:grid;
-    grid-template-columns: 60px 1fr;
-    gap: 24px;
-    align-items:start;
-  }
-  .concept-num{
-    font-family:"Zen Old Mincho", serif;
-    font-size: 34px;
-    color: var(--accent);
-  }
-  .concept-item h3{
-    font-family:"Zen Old Mincho", serif;
-    font-weight: 500;
-    font-size: 18px;
-    margin-bottom: 12px;
-    letter-spacing: 0.03em;
-  }
-  .concept-item p{
-    font-size: 14.5px;
-    color: var(--ink-soft);
-  }
-
-  /* ---------- Compare table ---------- */
-  .compare{
-    max-width: 620px;
-    margin: 0 auto;
-    display:grid;
-    grid-template-columns: 1fr 1fr;
-    border: 1px solid var(--line);
-    border-radius: 4px;
-    overflow:hidden;
-  }
-  .compare > div{
-    padding: 40px 28px;
-    text-align:center;
-  }
-  .compare .other{
-    background: var(--bg-soft);
-    color: var(--ink-soft);
-  }
-  .compare .mine{
-    background: var(--white);
-  }
-  .compare .label{
-    font-size: 11.5px;
-    letter-spacing: 0.15em;
-    margin-bottom: 18px;
-    display:block;
-  }
-  .compare .phrase{
-    font-family:"Zen Old Mincho", serif;
-    font-size: 17px;
-    line-height: 1.9;
-  }
-  .compare .mine .phrase{ color: var(--accent-deep); }
-
-  /* ---------- Values grid ---------- */
-  .value-grid{
-    max-width: 760px;
-    margin: 0 auto;
-    display:grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2px;
-    background: var(--line);
-    border: 1px solid var(--line);
-  }
-  .value-item{
-    background: var(--bg);
-    padding: 42px 34px;
-  }
-  .value-item h3{
-    font-family:"Zen Old Mincho", serif;
-    font-weight: 500;
-    font-size: 17px;
-    margin-bottom: 14px;
-    letter-spacing: 0.02em;
-  }
-  .value-item p{
-    font-size: 13.8px;
-    color: var(--ink-soft);
-  }
-
-  /* ---------- Mission / points ---------- */
-  .points{
-    max-width: 520px;
-    margin: 48px auto 0;
-    display:flex;
-    flex-direction:column;
-    gap: 20px;
-  }
-  .point{
-    display:flex;
-    align-items:center;
-    gap: 16px;
-    font-size: 14.5px;
-    color: var(--ink-soft);
-  }
-  .point::before{
-    content:"";
-    width:6px; height:6px;
-    border-radius:50%;
-    background: var(--accent-deep);
-    flex-shrink:0;
-  }
-
-  /* ---------- Final CTA ---------- */
-  .final-cta{
-    text-align:center;
-    padding: 130px 0 140px;
-    background: linear-gradient(180deg, var(--bg) 0%, var(--bg-soft) 100%);
-  }
-  .final-cta h2{ margin-bottom: 26px; }
-
-  footer{
-    text-align:center;
-    padding: 40px 0;
-    font-size: 11.5px;
-    color: var(--ink-soft);
-    letter-spacing: 0.06em;
-    border-top: 1px solid var(--line);
-  }
-
-  /* ---------- Fade in on scroll ---------- */
-  .fade-in{
-    opacity: 0;
-    transform: translateY(18px);
-    transition: opacity 1s ease, transform 1s ease;
-  }
-  .fade-in.visible{
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  @media (max-width: 620px){
-    .compare{ grid-template-columns: 1fr; }
-    .value-grid{ grid-template-columns: 1fr; }
-    .concept-item{ grid-template-columns: 44px 1fr; gap:16px; }
-    section{ padding: 80px 0; }
-    .hero{ padding: 90px 0 70px; }
-  }
+body{margin:0;background:#F5F7F4;color:#1E2B2F;font-family:"Noto Sans JP","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif}
+h1,h2,h3{font-family:"Zen Maru Gothic","Noto Sans JP","Hiragino Maru Gothic ProN",sans-serif}
+a{color:#2F6159}a:hover{color:#1E2B2F}
 </style>
 </head>
 <body>
+<div style="width: 100%; background: #F5F7F4; color: #1E2B2F; font-size: 17px; line-height: 1.9; overflow: hidden">
 
-<header>
-  <div class="wrap">
-    <div class="logo">uniopia</div>
-    <a href="#cta" class="header-cta">無料相談を申し込む</a>
-  </div>
+<!-- Header -->
+<header style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; max-width: 1120px; margin: 0 auto; padding: 20px clamp(20px, 5vw, 48px); box-sizing: border-box">
+<div style="font-family: 'Zen Maru Gothic', sans-serif; font-weight: 700; font-size: 26px; letter-spacing: 0.04em; color: #1E2B2F">uniopia</div>
+<a href="https://forms.gle/DDqWHE2uRzZjneun7" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 0 24px; border-radius: 999px; border: 2px solid #3F7A72; color: #2F6159; font-weight: 700; font-size: 15px; text-decoration: none">体験セッションを申し込む</a>
 </header>
 
-<section class="hero">
-  <div class="wrap">
-    <p class="hero-eyebrow serif">U N I O P I A</p>
-    <h1>
-      「正解」を探すのを、やめてみる。
-      <span class="light">我慢や気疲れなく、毎日心から笑って生きられる人生へ。</span>
-    </h1>
-    <p class="lead">
-      頑張っても、なぜか満たされない。<br>
-      「良い人」でいることに、少し疲れている。<br>
-      そんなあなたのための、脱力と受容のコーチング。
-    </p>
-    <div class="cta" id="cta">
-      <a href="https://forms.gle/nS7CVzFQ9ggvE7c66" class="btn" target="_blank" rel="noopener">無料相談に申し込む</a>
-    </div>
-  </div>
+<!-- Hero -->
+<section style="position: relative; max-width: 1120px; margin: 0 auto; padding: clamp(32px, 6vw, 80px) clamp(20px, 5vw, 48px) clamp(56px, 8vw, 112px); box-sizing: border-box">
+<div style="position: absolute; top: 24px; right: -40px; width: 280px; height: 280px; border-radius: 50%; background: #F3E6DA"></div>
+<div style="position: absolute; bottom: 8px; right: 180px; width: 120px; height: 120px; border-radius: 50%; background: #DCE8E3"></div>
+<div style="position: relative; max-width: 720px">
+<p style="margin: 0 0 20px; font-size: 15px; font-weight: 700; letter-spacing: 0.12em; color: #2F6159">オンラインのコーチング体験セッション</p>
+<h1 style="margin: 0 0 28px; font-size: clamp(30px, 5.2vw, 54px); line-height: 1.5; font-weight: 700">「ちゃんとしてるのに、<br>なぜか満たされない」<br>あなたへ。</h1>
+<p style="margin: 0 0 36px; font-size: clamp(16px, 2vw, 19px); line-height: 2; color: #3B4A4F">頭の中にある「〇〇な自分はダメ」というルールをゆるめて、自分の本当の望みに気づく。目標達成のためではなく、毎日が楽しくなるための、人生まるごとのコーチングです。</p>
+<a href="https://forms.gle/DDqWHE2uRzZjneun7" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; justify-content: center; min-height: 56px; padding: 0 40px; border-radius: 999px; background: #3F7A72; color: #FFFFFF; font-weight: 700; font-size: 17px; text-decoration: none">体験セッションに申し込む</a>
+<p style="margin: 14px 0 0; font-size: 14px; color: #56656A">オンライン（Zoom）・90〜120分・無料</p>
+</div>
 </section>
 
-<section class="fade-in">
-  <div class="wrap">
-    <span class="eyebrow serif">TARGET</span>
-    <h2>こんな感覚、<br class="mobile-only">ありませんか。</h2>
-    <p class="section-lead">
-      「正解の呪縛」に疲れてしまった、隠れ虚無感を抱える人へ。
-    </p>
-    <div class="empathy-list">
-      <div class="empathy-item">
-        <span class="empathy-mark">—</span>
-        <p>親や世間の期待に応え、波風立てずに「良い人」として生きてきた。</p>
-      </div>
-      <div class="empathy-item">
-        <span class="empathy-mark">—</span>
-        <p>なのに、なぜか自分だけ損をしている気がする。</p>
-      </div>
-      <div class="empathy-item">
-        <span class="empathy-mark">—</span>
-        <p>頑張っても報われない。かといって、何をしたいのかもわからない。</p>
-      </div>
-      <div class="empathy-item">
-        <span class="empathy-mark">—</span>
-        <p>「幸せのテンプレート」を埋めてきたはずなのに、中身が空っぽな感覚がある。</p>
-      </div>
-    </div>
-  </div>
+<!-- Empathy -->
+<section style="background: #FFFFFF">
+<div style="max-width: 1040px; margin: 0 auto; padding: clamp(56px, 8vw, 96px) clamp(20px, 5vw, 48px); box-sizing: border-box">
+<h2 style="margin: 0 0 12px; font-size: clamp(24px, 3.4vw, 34px); line-height: 1.5; text-align: center">こんな状態に、心当たりはありませんか？</h2>
+<p style="margin: 0 0 44px; text-align: center; color: #56656A; font-size: 15px">ひとつでも当てはまれば、このページはあなたのためのものです。</p>
+<div style="display: flex; flex-wrap: wrap; gap: 16px">
+<div style="flex: 1 1 300px; background: #F5F7F4; border-radius: 20px; padding: 24px 28px; font-size: 16px; line-height: 1.8">人に迷惑をかけないよう、いつも先回りして気を使っている</div>
+<div style="flex: 1 1 300px; background: #F5F7F4; border-radius: 20px; padding: 24px 28px; font-size: 16px; line-height: 1.8">弱みや感情を見せるのが苦手で、つい「大丈夫」と言ってしまう</div>
+<div style="flex: 1 1 300px; background: #F5F7F4; border-radius: 20px; padding: 24px 28px; font-size: 16px; line-height: 1.8">「やりたいこと」を聞かれると、世間的に正しそうな答えが先に浮かぶ</div>
+<div style="flex: 1 1 300px; background: #F5F7F4; border-radius: 20px; padding: 24px 28px; font-size: 16px; line-height: 1.8">頑張って結果も出しているのに、「まだまだ」「ちゃんとしなきゃ」と思ってしまう</div>
+<div style="flex: 1 1 300px; background: #F5F7F4; border-radius: 20px; padding: 24px 28px; font-size: 16px; line-height: 1.8">将来への漠然とした不安が、ずっと頭のどこかにある</div>
+<div style="flex: 1 1 300px; background: #F5F7F4; border-radius: 20px; padding: 24px 28px; font-size: 16px; line-height: 1.8">失敗したくなくて、本気で挑戦することをなんとなく避けている</div>
+</div>
+</div>
 </section>
 
-<section class="section-alt fade-in">
-  <div class="wrap">
-    <span class="eyebrow serif">PURPOSE</span>
-    <h2>なぜ、それを<br>「自分が」やるのか。</h2>
-    <div class="quote-block">
-      <p class="serif-line">
-        人はみんな、<br>
-        失敗したくない。嫌われたくない。<br>
-        失いたくない。傷つきたくない。<br>
-        <span class="fade">だから、「正解」を探す。</span>
-      </p>
-    </div>
-    <div class="divider" style="margin-top:56px;"></div>
-    <p class="section-lead" style="margin-top:56px; margin-bottom:0;">
-      楽に、楽しく、自由に生きたいのに。<br>
-      空気を読んで、気を遣って。<br>
-      頭と心が一致していない辛さ、悔しさ、もどかしさを、<br>
-      わたし自身がずっと知っているから。
-    </p>
-  </div>
+<!-- Insight -->
+<section style="max-width: 820px; margin: 0 auto; padding: clamp(56px, 8vw, 104px) clamp(20px, 5vw, 48px); box-sizing: border-box">
+<p style="margin: 0 0 16px; font-size: 15px; font-weight: 700; letter-spacing: 0.12em; color: #2F6159; text-align: center">その苦しさの正体</p>
+<h2 style="margin: 0 0 32px; font-size: clamp(24px, 3.4vw, 34px); line-height: 1.6; text-align: center">あなたが弱いのではなく、<br>頑張り屋さんが身につけた<br>「ダメのルール」かもしれません</h2>
+<p style="margin: 0 0 20px">「すごい自分でいなきゃ」「人に迷惑をかけたらダメ」「弱みを見せたらダメ」。こうしたルールは、周りの期待に応えながら育つ中で、自分を守るために身につけた、とても自然なものです。</p>
+<p style="margin: 0">ただ、気づかないまま持ち続けると、自分の望みより「正解」を優先し続けることになります。そうなると、結果が出ても満たされず、やりたいことも見えにくくなることがあります。</p>
 </section>
 
-<section class="fade-in">
-  <div class="wrap">
-    <span class="eyebrow serif">VISION</span>
-    <h2>こんな世界だったら、<br>いいな。</h2>
-    <div class="vision-card">
-      <p class="serif">
-        我慢や気疲れなく、<br>
-        毎日心から笑って生きられる世界。
-      </p>
-    </div>
-  </div>
+<!-- Story -->
+<section style="background: #F3E6DA">
+<div style="display: flex; flex-wrap: wrap; align-items: flex-start; gap: clamp(28px, 5vw, 64px); max-width: 1040px; margin: 0 auto; padding: clamp(56px, 8vw, 96px) clamp(20px, 5vw, 48px); box-sizing: border-box">
+<div style="flex: 1 1 420px; min-width: 0; max-width: 760px; margin: 0 auto">
+<p style="margin: 0 0 12px; font-size: 15px; font-weight: 700; letter-spacing: 0.12em; color: #2F6159">私について ／ 神野 麟太朗</p>
+<h2 style="margin: 0 0 28px; font-size: clamp(24px, 3.4vw, 32px); line-height: 1.6">昔の僕も、<br>「ちゃんとした良い子」でした</h2>
+<p style="margin: 0 0 18px">周りに褒められることが嬉しくて、いつの間にか「すごい自分」でいることが、自分の価値になっていました。人の顔色を読むのは得意でしたが、自分の気持ちはだんだん分からなくなっていました。</p>
+<p style="margin: 0 0 18px">本気でやって届かなかったら怖くて、言い訳や環境選びで勝負を避けてきたように思います。浪人や就職活動の挫折で、自分が思っていたほど特別ではないと知り、そこから少しずつ「評価されるか」ではなく「心地いいか」で選ぶようになりました。</p>
+<p style="margin: 0 0 18px">そんなとき、大切な人の力になりたくて調べた先で、コーチングに出会いました。自分で受けたワークの中で、自分を縛っていた「ダメのルール」に初めて気づいたとき、ずっと探していたものが見つかった気がして、叫びたいくらいでした。</p>
+<p style="margin: 0">自分の答えが出せるようになり、毎日が前よりずっと楽しくなりました。同じ生きづらさを抱えている人に、この体験を届けたくて、uniopiaを始めました。</p>
+</div>
+</div>
 </section>
 
-<section class="section-alt fade-in">
-  <div class="wrap">
-    <span class="eyebrow serif">CONCEPT</span>
-    <h2>「正解」を捨てて、<br>「適当な自分」を許すための、<br>思考の解体。</h2>
-    <p class="section-lead">何を、するのか。</p>
-    <div class="concept-list">
-      <div class="concept-item">
-        <span class="concept-num serif">01</span>
-        <div>
-          <h3>壁を、消していく。</h3>
-          <p>壁を乗り越えるのではなく、「そもそもその壁、幻じゃない?」と問いかけ、壁そのものを消していく作業です。</p>
-        </div>
-      </div>
-      <div class="concept-item">
-        <span class="concept-num serif">02</span>
-        <div>
-          <h3>「ただの人間」に戻る許可を出す。</h3>
-          <p>「特別」を目指して疲れてしまった人に、頑張らなくていい、ただの人間に戻ってもいいという許可を出すコーチングです。</p>
-        </div>
-      </div>
-      <div class="concept-item">
-        <span class="concept-num serif">03</span>
-        <div>
-          <h3>苦しさの根源を、無効化する。</h3>
-          <p>善悪や正誤の判断を手放し、固定観念を崩すことで、今の「苦しさ」「生きづらさ」がそもそも成り立っていた前提そのものを無効化します。</p>
-        </div>
-      </div>
-    </div>
-  </div>
+<!-- Changes -->
+<section style="max-width: 1040px; margin: 0 auto; padding: clamp(56px, 8vw, 104px) clamp(20px, 5vw, 48px); box-sizing: border-box">
+<p style="margin: 0 0 16px; font-size: 15px; font-weight: 700; letter-spacing: 0.12em; color: #2F6159; text-align: center">コーチングで起きた変化</p>
+<h2 style="margin: 0 0 12px; font-size: clamp(24px, 3.4vw, 34px); line-height: 1.5; text-align: center">「世間の正解」で動く毎日から、<br>「自分の感覚」で動く毎日へ</h2>
+<p style="margin: 0 0 44px; text-align: center; color: #56656A; font-size: 15px">コーチングを受けて、僕自身に起きた変化です。感じ方や変化の形は、人それぞれです。</p>
+<div style="display: flex; flex-wrap: wrap; gap: 20px">
+
+<div style="flex: 1 1 300px; background: #FFFFFF; border-radius: 24px; padding: 28px 28px 30px; box-sizing: border-box">
+<p style="margin: 0 0 6px; font-size: 13px; font-weight: 700; color: #56656A; letter-spacing: 0.08em">これまで</p>
+<p style="margin: 0 0 18px; font-size: 16px; line-height: 1.7; color: #3B4A4F">やりたいことを聞かれたら、世間の正解を答えていた</p>
+<p style="margin: 0 0 6px; font-size: 13px; font-weight: 700; color: #2F6159; letter-spacing: 0.08em">いま</p>
+<p style="margin: 0; font-size: 18px; line-height: 1.7; font-weight: 700">自分の答えが出せる</p>
+</div>
+
+<div style="flex: 1 1 300px; background: #FFFFFF; border-radius: 24px; padding: 28px 28px 30px; box-sizing: border-box">
+<p style="margin: 0 0 6px; font-size: 13px; font-weight: 700; color: #56656A; letter-spacing: 0.08em">これまで</p>
+<p style="margin: 0 0 18px; font-size: 16px; line-height: 1.7; color: #3B4A4F">人の気持ちは読めても、自分の感情は分からなかった</p>
+<p style="margin: 0 0 6px; font-size: 13px; font-weight: 700; color: #2F6159; letter-spacing: 0.08em">いま</p>
+<p style="margin: 0; font-size: 18px; line-height: 1.7; font-weight: 700">自分の感情が分かる</p>
+</div>
+
+<div style="flex: 1 1 300px; background: #FFFFFF; border-radius: 24px; padding: 28px 28px 30px; box-sizing: border-box">
+<p style="margin: 0 0 6px; font-size: 13px; font-weight: 700; color: #56656A; letter-spacing: 0.08em">これまで</p>
+<p style="margin: 0 0 18px; font-size: 16px; line-height: 1.7; color: #3B4A4F">言えない気持ちを、ひとりで飲み込んでいた</p>
+<p style="margin: 0 0 6px; font-size: 13px; font-weight: 700; color: #2F6159; letter-spacing: 0.08em">いま</p>
+<p style="margin: 0; font-size: 18px; line-height: 1.7; font-weight: 700">ちゃんと相手に伝えられる</p>
+</div>
+
+<div style="flex: 1 1 300px; background: #FFFFFF; border-radius: 24px; padding: 28px 28px 30px; box-sizing: border-box">
+<p style="margin: 0 0 6px; font-size: 13px; font-weight: 700; color: #56656A; letter-spacing: 0.08em">これまで</p>
+<p style="margin: 0 0 18px; font-size: 16px; line-height: 1.7; color: #3B4A4F">友達を誘うのに、どこか遠慮があった</p>
+<p style="margin: 0 0 6px; font-size: 13px; font-weight: 700; color: #2F6159; letter-spacing: 0.08em">いま</p>
+<p style="margin: 0; font-size: 18px; line-height: 1.7; font-weight: 700">気軽に遊びに誘える</p>
+</div>
+
+<div style="flex: 1 1 300px; background: #FFFFFF; border-radius: 24px; padding: 28px 28px 30px; box-sizing: border-box">
+<p style="margin: 0 0 6px; font-size: 13px; font-weight: 700; color: #56656A; letter-spacing: 0.08em">これまで</p>
+<p style="margin: 0 0 18px; font-size: 16px; line-height: 1.7; color: #3B4A4F">「安いから」という理由で買い物をしていた</p>
+<p style="margin: 0 0 6px; font-size: 13px; font-weight: 700; color: #2F6159; letter-spacing: 0.08em">いま</p>
+<p style="margin: 0; font-size: 18px; line-height: 1.7; font-weight: 700">心が満たされるかどうかで選べる</p>
+</div>
+
+
+</div>
+<p style="margin: 40px 0 0; text-align: center; font-family: 'Zen Maru Gothic', sans-serif; font-weight: 700; font-size: clamp(18px, 2.4vw, 22px); line-height: 1.8">そして、家族も友達も、前よりもっと好きになりました。</p>
 </section>
 
-<section class="fade-in">
-  <div class="wrap">
-    <span class="eyebrow serif">IDENTITY</span>
-    <h2>目指すのは、<br>「達成」じゃない。</h2>
-    <div class="compare">
-      <div class="other">
-        <span class="label serif">世の中のコーチング</span>
-        <p class="phrase">目標達成 !<br>限界突破 !</p>
-      </div>
-      <div class="mine">
-        <span class="label serif">uniopiaのコーチング</span>
-        <p class="phrase">脱力と受容</p>
-      </div>
-    </div>
-  </div>
+<!-- Session -->
+<section style="background: #FFFFFF">
+<div style="max-width: 900px; margin: 0 auto; padding: clamp(56px, 8vw, 96px) clamp(20px, 5vw, 48px); box-sizing: border-box">
+<p style="margin: 0 0 16px; font-size: 15px; font-weight: 700; letter-spacing: 0.12em; color: #2F6159; text-align: center">体験セッション</p>
+<h2 style="margin: 0 0 40px; font-size: clamp(24px, 3.4vw, 34px); line-height: 1.5; text-align: center">まずは、話すだけで大丈夫です</h2>
+
+<div style="display: flex; flex-wrap: wrap; gap: 16px; margin-bottom: 40px">
+<div style="flex: 1 1 200px; background: #F5F7F4; border-radius: 20px; padding: 20px 24px; box-sizing: border-box">
+<p style="margin: 0 0 4px; font-size: 13px; font-weight: 700; color: #56656A">形式</p>
+<p style="margin: 0; font-weight: 700">オンライン（Zoom）</p>
+</div>
+<div style="flex: 1 1 200px; background: #F5F7F4; border-radius: 20px; padding: 20px 24px; box-sizing: border-box">
+<p style="margin: 0 0 4px; font-size: 13px; font-weight: 700; color: #56656A">所要時間</p>
+<p style="margin: 0; font-weight: 700">90〜120分（目安）</p>
+</div>
+<div style="flex: 1 1 200px; background: #F5F7F4; border-radius: 20px; padding: 20px 24px; box-sizing: border-box">
+<p style="margin: 0 0 4px; font-size: 13px; font-weight: 700; color: #56656A">料金</p>
+<p style="margin: 0; font-weight: 700">無料</p>
+<p style="margin: 6px 0 0; font-size: 13px; line-height: 1.7; color: #56656A">サービス改善のため、終了後に感想を1つだけお聞かせください。</p>
+</div>
+</div>
+
+<div style="display: flex; flex-wrap: wrap; gap: 24px">
+<div style="flex: 1 1 240px; min-width: 0">
+<div style="width: 44px; height: 44px; border-radius: 50%; background: #3F7A72; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-weight: 700; margin-bottom: 14px">1</div>
+<h3 style="margin: 0 0 8px; font-size: 19px; line-height: 1.5">いまの状態を聞かせてもらう</h3>
+<p style="margin: 0; font-size: 15px; line-height: 1.9; color: #3B4A4F">気になっていること、モヤモヤしていること。整理されていなくても大丈夫です。</p>
+</div>
+<div style="flex: 1 1 240px; min-width: 0">
+<div style="width: 44px; height: 44px; border-radius: 50%; background: #3F7A72; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-weight: 700; margin-bottom: 14px">2</div>
+<h3 style="margin: 0 0 8px; font-size: 19px; line-height: 1.5">一緒に、言葉にしていく</h3>
+<p style="margin: 0; font-size: 15px; line-height: 1.9; color: #3B4A4F">頭の中のルールや、本当はどうしたいのかを、問いかけを通して一緒に探します。</p>
+</div>
+<div style="flex: 1 1 240px; min-width: 0">
+<div style="width: 44px; height: 44px; border-radius: 50%; background: #3F7A72; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-weight: 700; margin-bottom: 14px">3</div>
+<h3 style="margin: 0 0 8px; font-size: 19px; line-height: 1.5">気づきを振り返る</h3>
+<p style="margin: 0; font-size: 15px; line-height: 1.9; color: #3B4A4F">気づいたことを確認して、今後どうするかは、あなたのペースで決めてください。</p>
+</div>
+</div>
+</div>
 </section>
 
-<section class="section-alt fade-in">
-  <div class="wrap">
-    <span class="eyebrow serif">VALUE</span>
-    <h2>そのやり方・あり方。</h2>
-    <div class="value-grid">
-      <div class="value-item">
-        <h3>自分を許す</h3>
-        <p>立ち止まる、迷う、変わる。そのどれも責めない。</p>
-      </div>
-      <div class="value-item">
-        <h3>内側から選ぶ</h3>
-        <p>正解や評価より、身体の感覚や小さな違和感を信じる。</p>
-      </div>
-      <div class="value-item">
-        <h3>余白を尊重する</h3>
-        <p>その人のペースと選択を尊重する。</p>
-      </div>
-      <div class="value-item">
-        <h3>遊び心を忘れない</h3>
-        <p>まじめになりすぎず、軽やかに向き合う。</p>
-      </div>
-    </div>
-  </div>
+<!-- FAQ -->
+<section style="max-width: 820px; margin: 0 auto; padding: clamp(56px, 8vw, 96px) clamp(20px, 5vw, 48px); box-sizing: border-box">
+<h2 style="margin: 0 0 40px; font-size: clamp(24px, 3.4vw, 34px); line-height: 1.5; text-align: center">よくあるご質問</h2>
+
+<div style="background: #FFFFFF; border-radius: 20px; padding: 24px 28px; margin-bottom: 14px">
+<h3 style="margin: 0 0 8px; font-size: 17px; line-height: 1.6">コーチングは初めてでも大丈夫ですか？</h3>
+<p style="margin: 0; font-size: 15px; line-height: 1.9; color: #3B4A4F">大丈夫です。うまく話せなくても、考えがまとまっていなくても構いません。話しながら一緒に整理していきます。</p>
+</div>
+<div style="background: #FFFFFF; border-radius: 20px; padding: 24px 28px; margin-bottom: 14px">
+<h3 style="margin: 0 0 8px; font-size: 17px; line-height: 1.6">具体的な悩みや目標がなくても受けられますか？</h3>
+<p style="margin: 0; font-size: 15px; line-height: 1.9; color: #3B4A4F">はい。「なんとなく満たされない」「やりたいことが分からない」という状態からで大丈夫です。仕事、恋愛、将来など、テーマも問いません。</p>
+</div>
+<div style="background: #FFFFFF; border-radius: 20px; padding: 24px 28px; margin-bottom: 14px">
+<h3 style="margin: 0 0 8px; font-size: 17px; line-height: 1.6">体験セッションのあとに、無理な勧誘はありますか？</h3>
+<p style="margin: 0; font-size: 15px; line-height: 1.9; color: #3B4A4F">無理な勧誘はしません。続けるかどうかは、体験の感触をふまえて、ご自身のペースで決めてください。</p>
+</div>
+<div style="background: #FFFFFF; border-radius: 20px; padding: 24px 28px; margin-bottom: 14px">
+<h3 style="margin: 0 0 8px; font-size: 17px; line-height: 1.6">カウンセリングや治療とは違うのですか？</h3>
+<p style="margin: 0; font-size: 15px; line-height: 1.9; color: #3B4A4F">違います。コーチングは医療行為や心理療法ではありません。心や体の不調が強いときは、医療機関への相談をおすすめします。</p>
+</div>
+<div style="background: #FFFFFF; border-radius: 20px; padding: 24px 28px">
+<h3 style="margin: 0 0 8px; font-size: 17px; line-height: 1.6">どうやって受けるのですか？</h3>
+<p style="margin: 0; font-size: 15px; line-height: 1.9; color: #3B4A4F">オンライン（Zoom）で行います。お申し込み後、日程調整のご連絡をお送りします。</p>
+</div>
 </section>
 
-<section class="fade-in">
-  <div class="wrap">
-    <span class="eyebrow serif">MISSION</span>
-    <h2>正解を探す生き方から、<br>離れられる場をつくる。</h2>
-    <p class="section-lead">uniopiaという名前が、指していること。</p>
-    <div class="points">
-      <div class="point">選択の主体が、「自分」であること</div>
-      <div class="point">目指す先が、「正解」ではないこと</div>
-      <div class="point">ゴールが、「その人固有」であること</div>
-      <div class="point">そして、プロセスを楽しむこと</div>
-    </div>
-  </div>
+<!-- Final CTA -->
+<section id="apply" style="background: #1E2B2F; color: #FFFFFF">
+<div style="max-width: 760px; margin: 0 auto; padding: clamp(56px, 8vw, 96px) clamp(20px, 5vw, 48px); box-sizing: border-box; text-align: center">
+<h2 style="margin: 0 0 20px; font-size: clamp(24px, 3.6vw, 36px); line-height: 1.6; color: #FFFFFF">毎日が楽しくなる最初の一歩を、<br>一緒に探してみませんか</h2>
+<p style="margin: 0 0 36px; font-size: 16px; line-height: 1.9; color: #D5DEDB">自分の「ダメのルール」に気づくと、望みが見えてきます。まずは気軽に、話しにきてください。</p>
+<a href="https://forms.gle/DDqWHE2uRzZjneun7" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; justify-content: center; min-height: 56px; padding: 0 44px; border-radius: 999px; background: #F3E6DA; color: #1E2B2F; font-weight: 700; font-size: 17px; text-decoration: none">体験セッションに申し込む</a>
+<p style="margin: 16px 0 0; font-size: 13px; color: #B8C4C0">お申し込みフォーム（Googleフォーム）が開きます</p>
+</div>
 </section>
 
-<section class="final-cta fade-in" id="cta-final">
-  <div class="wrap">
-    <span class="eyebrow serif">START</span>
-    <h2>正解探しを、<br>今日だけでも手放してみる。</h2>
-    <p class="section-lead">まずは、話すだけでも構いません。</p>
-    <a href="https://forms.gle/nS7CVzFQ9ggvE7c66" class="btn" target="_blank" rel="noopener">無料相談に申し込む</a>
-  </div>
-</section>
-
-<footer>
-  <div class="wrap">
-    © uniopia
-  </div>
+<!-- Footer -->
+<footer style="padding: 28px clamp(20px, 5vw, 48px); text-align: center; font-size: 13px; color: #56656A">
+uniopia &nbsp;|&nbsp; 神野 麟太朗 &nbsp;|&nbsp; © uniopia
 </footer>
 
-<script>
-  const targets = document.querySelectorAll('.fade-in');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting){
-        entry.target.classList.add('visible');
-      }
-    });
-  }, { threshold: 0.15 });
-  targets.forEach(t => observer.observe(t));
-</script>
-
+</div>
 </body>
 </html>
